@@ -1,0 +1,10 @@
+h2 Queue
+
+p Processing
+== partial '_queue', locals: { items: Dir["./data/queue/*.json.processing"].sort_by { |f| File.mtime(f)}}
+
+p Queued
+== partial '_queue', locals: { items: Dir["./data/queue/*.json"].sort_by { |f| File.mtime(f)}}
+
+p Finished
+== partial '_queue', locals: { items: Dir["./data/queue/*.json.done"].sort_by { |f| File.mtime(f)}}

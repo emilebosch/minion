@@ -1,0 +1,86 @@
+
+sass: 
+  *
+    box-sizing: border-box
+
+  body
+    font-family: helvetica
+    margin: 0
+    padding: 0
+    font-size: 10pt
+    background-color: #fafafa
+
+  .log
+    overflow: scroll
+
+  a 
+    color: black
+
+  table
+    font-size: 10pt
+    border-collapse: collapse
+   
+    th
+      text-align: left
+
+    th 
+      width: 200px
+      padding-bottom: 4px
+
+    td
+      margin: 0px
+      border-bottom: 1px solid #c0c0c0
+      padding: 5px
+      background-color: #efefef
+
+  h1
+    font-size: 14pt
+    margin: 0
+    margin-right: 10px
+    padding: 0
+    display: inline-block
+
+  h2
+    font-size: 12pt
+    margin: 0px
+    border-bottom: 1px solid #cecece 
+    margin-bottom: 10px
+    padding-bottom: 10px
+
+  label
+    display: block
+    margin-bottom: 5px
+    margin-top: 5px
+
+  input
+    display: block
+  
+  .nav 
+    background-color: #efefef
+    border-bottom: 2px solid #c0c0c0
+    margin-bottom: 20px
+    padding: 10px
+
+    a 
+      color: black
+      font-size: 10pt
+
+  .container
+    width: 1000px
+    margin: 0 auto
+
+    .page
+      border: 1px solid #cecece
+      padding: 20px
+      border-radius: 4px
+
+title Minion
+.nav
+  .container
+    h1 Minion
+    a href='/' Queue
+    '  | 
+    a href='/setup' Setup
+
+.container
+  .page==yield

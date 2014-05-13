@@ -1,0 +1,31 @@
+- unless defined? list
+  table
+    th PR
+    th User
+    th Ref
+    th Date
+    th Actions
+    - for item in items
+      -a=JSON.parse(File.read(item))
+      -sha=item.match(/\/.*\/(.*)\.json/)[1]
+      tr
+        td=a['pull_request']['title']
+        td=a['pull_request']['user']['login']
+        td: a href=a['pull_request']['html_url'] #{a['pull_request']['head']['ref']}@#{a['pull_request']['head']['sha'][0..6]}
+        td=Time.parse(a['pull_request']['updated_at']).strftime("%D %H:%M")
+        td
+          a href="/log/#{a['pull_request']['head']['sha']}" Log
+          '  | 
+          a href="/log/" View
+- else
+  - for item in items
+    .build
+      -a=JSON.parse(File.read(item))
+      -sha=item.match(/\/.*\/(.*)\.json/)[1]
+      .pr=a['pull_request']['title']
+      div=a['pull_request']['user']['login']
+      div: a href=a['pull_request']['html_url'] #{a['pull_request']['head']['ref']}@#{a['pull_request']['head']['sha'][0..6]}
+      
+      .actions
+        div=Time.parse(a['pull_request']['updated_at']).strftime("%D %H:%M")
+        a href="/log/#{a['pull_request']['head']['sha']}" Log

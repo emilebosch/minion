@@ -1,0 +1,10 @@
+.vagrant/
+repo
+queue
+data/
+logs
+.gems/
+.DS_Store
+grok
+data
+*.gem

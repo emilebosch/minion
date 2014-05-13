@@ -1,0 +1,45 @@
+sass:
+  .container 
+    width: 100%
+    margin: 0px
+    padding: 0px
+
+    .page
+      margin: 5px
+      padding: 5px
+
+  .nav
+    margin-bottom: 5px
+    
+
+  h1
+    font-size: 10pt
+
+  h2
+    padding-bottom: 3px
+
+  .build
+    background-color: #efefef
+    margin-bottom: 1px
+    padding: 5px
+    border-radius: 2px
+    position: relative
+
+  .actions
+    position: absolute
+    right: 0px
+    top: 0px
+    margin: 5px
+
+  .pr 
+    font-weight: bold
+
+
+p Processing
+== partial '_queue', locals: { list: true, items: Dir["./data/queue/*.json.processing"].sort_by { |f| File.mtime(f)}}
+
+p Queued
+== partial '_queue', locals: { list: true, items: Dir["./data/queue/*.json"].sort_by { |f| File.mtime(f)}}
+
+p Done
+== partial '_queue', locals: { list: true, items: Dir["./data/queue/*.json.done"].sort_by { |f| File.mtime(f)}}
