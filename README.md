@@ -9,7 +9,7 @@ Installation is pretty straight forward
 Clone this repo
 
 ```
-git clone git@github.com:emilebosch/dokku-deploy.git
+git clone git@github.com:emilebosch/minion.git
 ```
 
 Bundle install the gems
