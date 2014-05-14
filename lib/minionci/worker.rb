@@ -78,14 +78,14 @@ module MinionCI
       status  = 
       {
         state: state.to_s, 
-        target_url: "http://#{Settings.config['host']}/log/#{commit}"
+        target_url: "http://#{App.config['host']}/log/#{commit}"
       }
       token   = config["token"]      
       run "curl --silent #{url}?access_token=#{token} -H \"Content-Type: application/json\" -X POST -d '#{status.to_json}' &>/dev/null", "Setting commit status: #{state}"
     end
    
     def config
-      Settings.config
+      App.config
     end
 
     def running? 

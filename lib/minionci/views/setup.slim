@@ -1,10 +1,22 @@
-h2 Setup
-pre=MinionCI::Settings.config.to_yaml
+h2 Setup MinionCI
+- unless MinionCI::App.configured?
+  p.alert Welcome! Please configure MinionCI!
 form method='post'
-  label Github token
-  input name='settings[token]'
-  label Dokkku deploy server (dokku@dokku.me)
-  input name='settings[server]'
-  label Hostname #{request.host}
-  input name='settings[host]' value=(MinionCI::Settings.config && MinionCI::Settings.config['host'])||request.host
+  h3 CI setup
+  p Needed to kick of your automatic builds.
+  label Your github token to receive PR push notifications
+  input type='text' name='settings[token]'
+  label The dokkku server to deploy to (dokku@dokku.me)
+  input type='text'  name='settings[server]'
+
+  label The domain where the this MinionCI is hosted
+  input type='text'  name='settings[host]' value=(MinionCI::App.config && MinionCI::App.config['host'])||request.host
+
+  h3 Slack setup
+  p Push build notifications to slack.
+  label Slack domain (xxx.slack.com)
+  input type='text'  name='settings[slack_domain]'
+  label Slack token
+  input type='text'  name='settings[slack_token]'
+
   input type='submit' value='Save'

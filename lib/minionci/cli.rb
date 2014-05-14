@@ -6,15 +6,20 @@ module MinionCI
 
     desc "start", "Start minion"
     def start(domain=nil, key=ENV['GROK'])
-      Settings.init(false)
+      App.init(true)
       Process.spawn("ngrok","--log=stdout","-authtoken=#{key}","--subdomain=#{domain}","4567") if domain
       Server.run!
     end
 
     desc "build [commit]", "Build a certain commit"
     def build(commit)
-      Settings.init(false)
+      App.init(false)
       Worker.new.build commit
+    end
+
+    desc "reset", "Removes all data and starts a clean CI"
+    def reset
+      FileUtils.rm_rf("./data")
     end
   end
 end

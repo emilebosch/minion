@@ -11,7 +11,7 @@ module MinionCI
     set :partial_template_engine, :slim
 
     get '/' do
-      redirect '/setup' unless Settings.exist?
+      redirect '/setup' unless App.configured?
       slim :queue
     end
 
@@ -23,11 +23,11 @@ module MinionCI
       return unless pr['pull_request']
       commit = pr['pull_request']['head']['sha'][0..6]
 
-      File.write "#{Settings.config['queue_dir']}/#{commit}.json", JSON.pretty_generate(pr)
+      File.write "#{App.config['queue_dir']}/#{commit}.json", JSON.pretty_generate(pr)
     end
 
     post '/setup' do
-      Settings.save params[:settings]
+      App.save params[:settings]
       redirect '/'
     end
 

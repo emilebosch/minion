@@ -3,5 +3,5 @@ require 'bundler'
 Bundler.setup
 require 'minion'
 
-MinionCI::Settings.init(true)
+MinionCI::App.init(true)
 run MinionCI::Server

@@ -3,6 +3,12 @@ sass:
   *
     box-sizing: border-box
 
+  .alert
+    background-color: #efefef
+    border-radius: 3px 
+    display: block
+    padding: 10px
+
   body
     font-family: helvetica
     margin: 0
@@ -52,9 +58,17 @@ sass:
     margin-bottom: 5px
     margin-top: 5px
 
-  input
+  input[type='text']
     display: block
+    padding: 4px
+    width: 200px
   
+  textarea
+    display: block
+    padding: 4px
+    width: 400px
+    height: 150px
+
   .nav 
     background-color: #efefef
     border-bottom: 2px solid #c0c0c0
@@ -65,6 +79,9 @@ sass:
       color: black
       font-size: 10pt
 
+  h3
+    font-size: 10pt       
+
   .container
     width: 1000px
     margin: 0 auto
@@ -74,11 +91,11 @@ sass:
       padding: 20px
       border-radius: 4px
 
-title Minion
+title MinionCI
 .nav
   .container
-    h1 Minion
-    a href='/' Queue
+    h1 MinionCI
+    a href='/' Builds
     '  | 
     a href='/setup' Setup
 
