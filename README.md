@@ -24,4 +24,4 @@ Starting the app
 bundle exec rackup
 ```
 
-Open http://localhost:9292 and the setup screen wil guide you further.
+Now open [the setup page](http://localhost:9292) to guide you further.
