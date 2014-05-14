@@ -1,4 +1,4 @@
-module Minion
+module MinionCI
   class Worker 
 
     def start!
@@ -41,6 +41,8 @@ module Minion
 
       # check deploy url
       # check test results
+      run "ssh -t #{server} url #{app}"
+
       report report_url, :success, commit
       FileUtils.mv "#{next_up}.processing", "#{next_up}.done"
     end
@@ -57,7 +59,7 @@ module Minion
         pr = JSON.parse(File.read next_up)['pull_request']
         commit = pr['head']['sha']
         puts "-> Building #{commit}.." 
-        system("bundle exec minion build #{commit} > ./data/logs/#{commit}.log")
+        system("bundle exec minionci build #{commit} > ./data/logs/#{commit}.log")
       end
     end  
 

@@ -1,6 +1,0 @@
-#/usr/bin/env bash
-if [[ ! -z "$GROK" ]]; then
-  ngrok -subdomain dokkudeploy -authtoken $GROK 9292
-else
-  echo "Set \$GROK in your env"
-fi

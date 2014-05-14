@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    minion (0.0.1.pre)
+    minionci (0.0.1.pre)
       bundler
       hashie
       sass
@@ -37,5 +37,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  minion!
+  minionci!
   rake

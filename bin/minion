@@ -1,3 +1,0 @@
-#!/usr/bin/env ruby
-require 'minion'
-Minion::Cli.start(ARGV)

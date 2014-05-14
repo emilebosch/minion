@@ -4,7 +4,7 @@ require 'slim'
 require 'json'
 require 'sass'
 
-module Minion
+module MinionCI
   class Server < Sinatra::Base
     register Sinatra::Partial
     

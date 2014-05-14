@@ -1,6 +1,6 @@
 require 'yaml'
 
-module Minion
+module MinionCI
   class Settings
     class << self 
       

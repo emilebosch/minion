@@ -1,18 +1,18 @@
-require './lib/minion/version'
+require './lib/minionci/version'
 
 Gem::Specification.new do |s|
-  s.name        = 'minion'
-  s.version     = Minion::VERSION
+  s.name        = 'minionci'
+  s.version     = MinionCI::VERSION
   s.date        = '2013-11-05'
   s.summary     = "Deploy Github PR with ease on Dokku"
   s.description = "Allows you to automatically deploy github pull requests on Dokku"
 
   s.authors     = ["Emile Bosch"]
   s.email       = 'emilebosch@me.com'
-  s.files       = Dir.glob('{lib}/**/*') + %w(README.md config.ru minion.gemspec Gemfile)
+  s.files       = Dir.glob('{lib}/**/*') + %w(README.md config.ru minionci.gemspec Gemfile)
   s.homepage    = 'https://github.com/emilebosch/minion'
   s.license     = 'MIT'
-  s.executables << 'minion'
+  s.executables << 'minionci'
 
   s.add_dependency 'sinatra'
   s.add_dependency 'slim'

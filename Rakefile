@@ -1,7 +1,7 @@
 require 'rake/testtask'
-require './lib/minion/version'
+require './lib/minionci/version'
 
-NAME='minion'
+NAME='minionci'
 
 Rake::TestTask.new do |t|
   t.libs << "lib/#{NAME}.rb"
@@ -10,7 +10,7 @@ Rake::TestTask.new do |t|
 end
 
 task :build => :clean do 
-  `gem build minion.gemspec`
+  `gem build #{NAME}.gemspec`
 end
 
 task :clean do
@@ -18,12 +18,12 @@ task :clean do
 end
 
 task :uninstall do
-  `gem uninstall minion -ax`
+  `gem uninstall #{NAME} -ax`
   `rbenv rehash`
 end
 
 task :install => :uninstall  do
-  `gem install --local minion-#{Minion::VERSION}.gem`
+  `gem install --local #{NAME}-#{MinionCI::VERSION}.gem`
   `rbenv rehash`
 end
 
