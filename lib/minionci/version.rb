@@ -1,3 +1,3 @@
 module MinionCI
-  VERSION = '0.0.1.pre'
-end 
+  VERSION = "0.0.1.pre"
+end

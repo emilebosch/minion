@@ -16,7 +16,7 @@ GEM
   specs:
     ffi (1.9.25)
     hashie (3.6.0)
-    rack (1.6.11)
+    rack (1.6.12)
     rack-protection (1.5.5)
       rack
     rake (12.3.1)
@@ -49,4 +49,4 @@ DEPENDENCIES
   rake
 
 BUNDLED WITH
-   1.17.1
+   1.17.2
