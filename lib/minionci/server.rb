@@ -1,13 +1,6 @@
-require "sinatra/base"
-require "sinatra/partial"
-require "slim"
-require "json"
-require "sass"
-
 module MinionCI
   class Server < Sinatra::Base
     register Sinatra::Partial
-
     set :partial_template_engine, :slim
 
     get "/" do

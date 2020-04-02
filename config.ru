@@ -1,7 +1,7 @@
-require 'rubygems'
-require 'bundler'
+require "rubygems"
+require "bundler"
 Bundler.setup
-require 'minion'
+require "minion"
 
 MinionCI::App.init(true)
 run MinionCI::Server

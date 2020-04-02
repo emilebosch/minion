@@ -1,27 +1,21 @@
 # Minion CI
 
-This project aims to automatically deploy your Github pull requests via Dokkku and check CI against it.
+This project aims to automatically deploy your Github pull requests via Dokkku and check CI against it. 
+
+> Warning: This is an old unmaintained project. I will breathe some new life in this project.
 
 ## How to use
 
-Installation is pretty straight forward
-
-Clone this repo
-
-```
-git clone git@github.com:emilebosch/dokku-deploy.git
-```
-
 Bundle install the gems
 
-```
+```bash
 bundle
 ```
 
 Starting the app
 
-```
-bundle exec rackup
+```bash
+bundle exec minon
 ```
 
 now the setup screen wil guide you further

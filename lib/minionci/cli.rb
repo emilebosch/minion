@@ -1,14 +1,11 @@
-require "thor"
-
 module MinionCI
   class Cli < Thor
     default_task :start
-
     desc "start", "Start minion"
 
     def start(domain = nil, key = ENV["GROK"])
       App.init(true)
-      Process.spawn("ngrok", "--log=stdout", "-authtoken=#{key}", "--subdomain=#{domain}", "4567") if domain
+      Worker.run!
       Server.run!
     end
 

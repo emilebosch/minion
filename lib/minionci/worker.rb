@@ -13,10 +13,11 @@ module MinionCI
       server = config["server"]
       repo_dir = config["repo_dir"]
 
+      report_url = pr["statuses_url"]
+
       commit = pr["head"]["sha"]
       branch = pr["head"]["ref"]
       git_url = pr["head"]["repo"]["ssh_url"]
-      report_url = pr["statuses_url"]
 
       app = "pr-#{branch}"
 

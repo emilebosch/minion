@@ -1,19 +1,26 @@
+require "yaml"
+require "thor"
+require "sinatra/base"
+require "sinatra/partial"
+require "slim"
+require "json"
+require "sass"
+
 require "minionci/server"
 require "minionci/worker"
 require "minionci/version"
 require "minionci/cli"
-require "yaml"
 
 module MinionCI
   class App
     class << self
       def init(run_worker = false)
         %w(logs queue).each { |d| FileUtils.mkdir_p "./data/#{d}" }
-        Worker.new.start! if run_worker
       end
 
       def config
         defaults.merge YAML.load_file config_file if configured?
+        defaults
       end
 
       def configured?

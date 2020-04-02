@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.files = Dir.glob("{lib}/**/*") + %w(README.md config.ru minionci.gemspec Gemfile)
   s.homepage = "https://github.com/emilebosch/minion"
   s.license = "MIT"
-  s.executables << "minionci"
+  s.executables << "minion"
 
   s.add_dependency "sinatra"
   s.add_dependency "slim"
